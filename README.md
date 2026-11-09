@@ -18,7 +18,7 @@ In this project, we are utilizing two different AI models for text generation an
 ## Dev Branch: GEMINI (Google's Generative AI)
 
 - In the dev branch, we are using GEMINI, a generative AI model from Google, to handle the same tasks. GEMINI is used for analyzing network packets and generating explanations or security solutions based on the packet data. The dev branch allows you to test and compare the performance and accuracy of GEMINI against OpenAI.
-- `pcap_formatted.py` on this branch imports `google.generativeai` and reads `GEMINI_API_KEY` from your `.env` file.
+- `pcap_formatted.py` on this branch imports `genai` from the `google-genai` package and reads `GEMINI_API_KEY` from your `.env` file.
 
 > IMPORTANT: `main` and `dev` are NOT meant to be merged together. They are two parallel implementations of the same tool, one per AI provider. Check out whichever branch matches the AI provider you want to use (`git checkout main` for OpenAI, `git checkout dev` for Gemini) and stay on it.
 
@@ -68,7 +68,7 @@ git checkout main   # or: git checkout dev
 - Install Scapy (used on both branches to parse pcap files): `pip install scapy`
 - Install `python-dotenv` (used on both branches to load your `.env` file): `pip install python-dotenv`
 - On `main` (OpenAI), also install: `pip install openai`
-- On `dev` (Gemini), also install: `pip install google-generativeai`
+- On `dev` (Gemini), also install: `pip install google-genai` (the older `google-generativeai` package is end-of-life). The `dev` branch has its own README with full setup steps for Gemini.
 
 ## Step 4: Get API access and credits
 You only need to do the section for the provider matching the branch you checked out in Step 1.
